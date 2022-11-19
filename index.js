@@ -2,7 +2,8 @@ const {ApolloServer} = require('apollo-server');
 const gql = require('graphql-tag');
 const mongoose = require("mongoose");
 
-const {MongoDB_URI} = require("./config/config")
+const {MongoDB_URI} = require("./config/config");
+const PostModel = require("./models/Post")
 
 
 // A schema is a collection of type definitions - typedefs
