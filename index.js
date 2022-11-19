@@ -1,5 +1,8 @@
 const {ApolloServer} = require('apollo-server');
 const gql = require('graphql-tag');
+const mongoose = require("mongoose");
+
+const {MongoDB_URI} = require("./config/config")
 
 
 // A schema is a collection of type definitions - typedefs
@@ -26,6 +29,9 @@ const server = new ApolloServer({
     typeDefs,
     resolvers
 });
+
+mongoose.connect(MongoDB_URI, {useNewUrlParser:true, useUnifiedTopology: true});
+console.log("Connected to MongoDB...")
 
 server.listen({port:5000}).then((res) =>{
     console.log(`🚀  Server running at: ${res.url}`);
