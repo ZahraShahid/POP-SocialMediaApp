@@ -9,8 +9,15 @@ const PostModel = require("./models/Post")
 // A schema is a collection of type definitions - typedefs
 // defines the shape of your queries
 const typeDefs = gql`
-    type Query {               #Lists all the queries that a client can execute and its return type
-        printMessage: String!  #Recommended - !
+    type Post {
+        id:ID!
+        username:String!
+        createdAt:String!
+        body:String!
+    }
+    type Query {                                   #Lists all the queries that a client can execute and its return type
+        # printMessage: String!  #Recommended - !
+        getPosts: [Post]
     }
 `;
 
@@ -18,7 +25,16 @@ const typeDefs = gql`
 // Resolvers define how to fetch the types defined in your schema
 const resolvers = {
     Query : {
-        printMessage: () => "Hello World!"
+        // printMessage: () => "Hello World!",
+        async getPosts(){
+            try{
+                const posts = await PostModel.find();
+                return posts;
+
+            }catch(err){
+                throw new Error(err);
+            }
+        }
     }
     // Mutations : {
     // }
