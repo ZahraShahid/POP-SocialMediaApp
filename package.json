@@ -4,7 +4,7 @@
   "description": "A social media app created using React, MongoDB, Node, Express, and GraphQL.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon index"
   },
   "repository": {
     "type": "git",
@@ -21,5 +21,8 @@
     "apollo-server": "^3.11.1",
     "graphql": "^16.6.0",
     "mongoose": "^6.7.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
   }
 }
