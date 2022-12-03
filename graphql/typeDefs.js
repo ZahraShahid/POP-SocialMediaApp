@@ -28,5 +28,6 @@ module.exports = gql`
   }
   type Mutation {
     register(registerInput: RegisterInput): User! #takes input from the user and then use in business logic
+    login(email: String!, password: String!): User!
   }
 `;
