@@ -10,5 +10,6 @@ module.exports = {
   // Mutations :  To modify or write server-side data
   Mutation: {
     ...userResolver.Mutation,
+    ...postResolver.Mutation
   },
 };
