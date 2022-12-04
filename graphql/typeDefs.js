@@ -25,6 +25,7 @@ module.exports = gql`
   }
   type Query {
     getPosts: [Post] #Lists all the queries that a client can execute and its return type
+    getPost(postId: ID!): Post
   }
   type Mutation {
     register(registerInput: RegisterInput): User! #takes input from the user and then use in business logic
