@@ -9,7 +9,8 @@ const resolvers = require("./graphql/resolvers")
 // Apollo constructor requires schema definitions and resolvers
 const server = new ApolloServer({
     typeDefs,
-    resolvers
+    resolvers,
+    context: ({req}) => ({req})   // To get access to the things we have passed including the header within our function
 });
 
 mongoose.connect(MongoDB_URI, {useNewUrlParser:true, useUnifiedTopology: true});
