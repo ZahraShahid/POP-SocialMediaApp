@@ -1,5 +1,6 @@
 const postResolver = require("./posts");
 const userResolver = require("./users");
+const commentResolver = require("./comments");
 
 module.exports = {
   // Queries : To fetch data from the server
@@ -10,6 +11,7 @@ module.exports = {
   // Mutations :  To modify or write server-side data
   Mutation: {
     ...userResolver.Mutation,
-    ...postResolver.Mutation
+    ...postResolver.Mutation,
+    ...commentResolver.Mutation
   },
 };
