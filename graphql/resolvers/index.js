@@ -1,6 +1,7 @@
 const postResolver = require("./posts");
 const userResolver = require("./users");
 const commentResolver = require("./comments");
+const likeResolver = require("./likes");
 
 module.exports = {
   // Queries : To fetch data from the server
@@ -12,6 +13,7 @@ module.exports = {
   Mutation: {
     ...userResolver.Mutation,
     ...postResolver.Mutation,
-    ...commentResolver.Mutation
+    ...commentResolver.Mutation,
+    ...likeResolver.Mutation
   },
 };
