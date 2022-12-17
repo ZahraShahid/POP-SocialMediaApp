@@ -28,6 +28,10 @@ module.exports = {
     async createPost(_, { body }, context) {
       const user = auth(context);
 
+      if(args.body.trim()===''){
+        throw new Error("Post must not be empty!")
+      }
+
       const newPost = new Post({
         body,
         user: user.id, // added user to post in postModel
