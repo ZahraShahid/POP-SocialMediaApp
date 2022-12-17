@@ -20,7 +20,10 @@ const postSchema = new Schema({
     user: {
         type :Schema.Types.ObjectId,
         ref: 'users'
-    }
+    },
+    likeCount: Number,
+    commentCount: Number
+    
 });
 
 module.exports = model("Post", postSchema);
